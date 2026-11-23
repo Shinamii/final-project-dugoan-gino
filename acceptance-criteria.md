@@ -1,36 +1,23 @@
 # Acceptance Criteria
-<!--
-Acceptance criteria tell you when a user story is DONE. Each one must be testable: pass or fail.
-Write 2–3 criteria for every user story using this format:
 
-Given [a situation], when [the user does something], then [this should happen].
+### Feature: Order Type Selection
+US1: Select an order type
+- AC1.1: Given I open the ordering interface, when I view the order options, then I see 
+Delivery, Dine-in, and Take-out.
+- AC1.2: Given I have not selected an order type, when I click "Place Order," then the 
+system displays a message requiring me to select Delivery, Dine-in, or Take-out before 
+proceeding.
 
-Tips:
-- Number them under their story: AC1.1 and AC1.2 belong to US1.
-- Describe what the user SEES, not how the code works.
-- Include at least one "what if it goes wrong" case per story (empty input, no results).
-- Avoid vague words like "fast," "nice," or "easy." Could a classmate test it and agree it passed?
+### Feature: Meal Customization
+US2: Customize my meal
+- AC2.1: Given I open the menu, when I choose my meal, then I can select my noodle type 
+and preferred spice level.
+- AC2.2: Given I customize my meal, when I select add-ons, drinks, or desserts, then my 
+selected items are added to my order.
 
-Example:
-## US1: View today's menu
-- AC1.1: Given I open the App page, when it loads, then I see each dish with its name, photo and price.
-- AC1.2: Given no dishes are added yet, when I open the menu, then I see "No dishes today yet."
-
-AC - Acceptance Criteria
--->
-
-### Feature: 
-US1:
-- AC1.1: 
-- AC1.2: 
-
-### Feature: 
-US2:
-- AC2.1: 
-- AC2.2: 
-
-### Feature: 
-US3:
-- AC3.1: 
-- AC3.2: 
-
+### Feature: Payment Method Selection
+US3: Select a payment method
+- AC3.1: Given I proceed to checkout, when I view the payment options, then I see Cash 
+on Delivery (COD) and online payment.
+- AC3.2: Given I select a payment method, when I view my order summary, then my selected 
+payment method is displayed.
