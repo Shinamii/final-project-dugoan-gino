@@ -1,6 +1,6 @@
 # Build Your Own Bite
-Build Your Own Bite is a web-based food ordering system designed to streamline order
-customization for delivery, dine-in, and walk-in customers.
+Build Your Own Bite is a web-based noodle ordering system designed to let customers customize their noodle meals and 
+conveniently place orders for delivery, dine-in, or takeout.
 
 ## Problem
 Customers in Manolo Fortich experience long waiting lines and confusing food orders, 
@@ -13,13 +13,14 @@ a web-based system.
 Delivery Customer; Walk-in Customer
 
 ## Solution
-Build Your Own Bite provides an easy-to-use online ordering system where customers can
-choose their preferred food, customize their orders, and select their payment method. It
-helps make ordering faster, reduces confusion between customers and cashiers, and
-minimizes long waiting lines.
+Build Your Own Bite provides an easy-to-use online noodle ordering system where customers can choose their preferred 
+noodle varieties, customize their spice levels and add-ons, and select their payment method. It simplifies the ordering 
+process, reduces confusion between customers and cashiers, and minimizes long waiting lines for a more convenient 
+ordering experience.
 
 ## Main Feature
-Customers can browse the menu, customize their food orders, and place orders online.
+Customers can browse different noodle varieties, customize their preferred spice levels and add-ons, and conveniently 
+place their orders online.
 
 
 ## Pages
