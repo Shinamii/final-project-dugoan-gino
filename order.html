@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Order Type</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <main>
+        <fieldset>
+        <h2>Choose your order type</h2>
+
+        <div>
+            <input type="radio" id="dine-in" name="orderType" value="dine-in">
+            <label for="dine-in">Dine-in</label>
+        </div>
+ 
+        <div>
+            <input type="radio" id="take-out" name="orderType" value="take-out">
+            <label for="take-out">Take-out</label>
+        </div>
+
+        <div>
+            <input type="radio" id="delivery" name="orderType" value="delivery">
+            <label for="delivery">Delivery</label>
+        </div>
+         </fieldset>
+
+         <button type="button" id="place-order">Place Order</button>
+         <p id="message"></p>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
