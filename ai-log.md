@@ -41,10 +41,16 @@ EXAMPLE:
 Minimum of 5 meaningful AI logs.
 -->
 
-## Entry 1: [Date]
-- **User story:**
-- **What I asked:**
-- **What the AI suggested:**
-- **What I changed or rejected, and why:**
-- **How I tested it:**
-- **What I learned:**
+## Entry 1: [Nov 25, 2026]
+- **User story:** US1: Order type selection
+- **What I asked:** How to create radio buttons for Dine-in, Take-out, and Delivery, display an error message when no 
+option is selected, show an order summary, and display the delivery address field only when Delivery is selected.
+- **What the AI suggested:** JavaScript using addEventListener(), querySelectorAll(), and forEach() to handle radio 
+button selections. It also suggested using the hidden property to show or hide the delivery address section.
+- **What I changed or rejected, and why:**  I kept my existing HTML structure and JavaScript variables. I inserted the 
+suggested Step 2 code into my existing script.js instead of replacing my entire code.
+- **How I tested it:** Checked that the error message appears when I click Place Order without selecting an option. 
+Checked that the order summary displays the selected order type. Tested whether the delivery address appears when 
+Delivery is selected and hides when Dine-in or Take-out is selected.
+- **What I learned:**  I learned how the change event detects radio button selections, how forEach() applies an event 
+listener to multiple radio buttons, and how the hidden property shows or hides an HTML element.

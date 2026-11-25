@@ -9,14 +9,14 @@
 <body>
 
     <main>
-        <fieldset>
-        <h2>Choose your order type</h2>
+    <fieldset>
+        <legend>Choose your order type</legend>
 
         <div>
             <input type="radio" id="dine-in" name="orderType" value="dine-in">
             <label for="dine-in">Dine-in</label>
         </div>
- 
+
         <div>
             <input type="radio" id="take-out" name="orderType" value="take-out">
             <label for="take-out">Take-out</label>
@@ -26,10 +26,37 @@
             <input type="radio" id="delivery" name="orderType" value="delivery">
             <label for="delivery">Delivery</label>
         </div>
-         </fieldset>
+    </fieldset>
 
-         <button type="button" id="place-order">Place Order</button>
-         <p id="message"></p>
+    <div id="address-section" hidden>
+        <label for="address">Delivery address</label>
+        <input type="text" id="address" name="address">
+    </div>
+
+    <fieldset>
+    <legend>Choose your noodles</legend>
+
+    <div>
+        <input type="radio" id="buldak-original" name="noodle" value="buldak-original">
+        <label for="buldak-original">Buldak Original <span id="buldak-original-stock"></span></label>
+    </div> 
+
+    <div>
+        <input type="radio" id="buldak-carbonara" name="noodle" value="buldak-carbonara">
+        <label for="buldak-carbonara">Buldak Carbonara <span id="buldak-carbonara-stock"></span></label>
+    </div>
+
+    <div>
+        <input type="radio" id="chapagetti" name="noodle" value="chapagetti">
+        <label for="chapagetti">Chapagetti <span id="chapagetti-stock"></span></label>
+    </div>
+    </fieldset>
+
+    <button type="button" id="place-order">Place Order</button>
+
+     <p id="message"></p>
+     <p id="order-summary"></p>
+     <p id="address-summary"></p>
     </main>
 
     <script src="script.js"></script>
