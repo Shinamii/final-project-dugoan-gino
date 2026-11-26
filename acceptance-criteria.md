@@ -19,8 +19,9 @@ of Stock" and cannot be selected.
 spice level options, then I see Mild, Medium, Hot, Extra Hot, and Extreme, and only one can be selected at a time. If I 
 select Chapagetti, the spice level options are disabled.
 
-- AC2.3:Given I am on the Order page, when I view the available add-ons, drinks, and desserts, then I see their 
-respective options and can select multiple items. Unavailable items are marked as "Out of Stock" and cannot be selected.
+- AC2.3: Given I am on the Order page, when I view the top of the page, then I 
+see three categories (Noodles, Drinks, Desserts), each with an image and a label. 
+When I click one, then its items are shown.
 
 ### Feature: Payment Method Selection
 US3: Select a payment method

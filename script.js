@@ -1,3 +1,4 @@
+
 const placeOrderButton = document.getElementById('place-order');
 const message = document.getElementById('message');
 const orderSummary = document.getElementById('order-summary');
@@ -229,4 +230,31 @@ const noodleRadios = document.querySelectorAll('input[name="noodle"]');
 
 noodleRadios.forEach(function (radio) {
     radio.addEventListener('change', updateSpiceOptions);
+});
+
+// Category navigation: scroll to the clicked section
+const categoryButtons = document.querySelectorAll('#categories button');
+
+categoryButtons.forEach(function (button) {
+    button.addEventListener('click', function () {
+        const target = document.getElementById(button.dataset.target);
+        target.scrollIntoView({ behavior: 'smooth' });
+    });
+});
+
+// Highlight the category whose section is currently visible
+const sections = document.querySelectorAll('#noodles, #drinks, #desserts');
+
+const observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+            categoryButtons.forEach(function (button) {
+                button.classList.toggle('active', button.dataset.target === entry.target.id);
+            });
+        }
+    });
+}, { rootMargin: '-40% 0px -55% 0px' });
+
+sections.forEach(function (section) {
+    observer.observe(section);
 });
