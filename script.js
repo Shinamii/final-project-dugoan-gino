@@ -47,7 +47,8 @@ placeOrderButton.addEventListener('click', function () {
         message.textContent = 'Please select an order type';
         orderSummary.textContent = '';
         addressSummary.textContent = '';
-        return;
+
+    } else {
 
         // Check delivery address
         if (selected.value === 'delivery' && addressInput.value.trim() === '') {
