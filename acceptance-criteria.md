@@ -10,7 +10,8 @@ order type" and the order is not submitted.
 
 ### Feature: Meal Customization
 US2: Customize my meal
-- AC2.1: Given I am on the Order page, when I view the noodle varieties, then I see Buldak Original, Buldak Carbonara, 
+- AC2.1: Given I am on the Order page, when I view the noodle varieties, then I 
+see Buldak Original, Buldak Carbonara, 
 and Chapagetti, and only one noodle variety can be selected at a time. Unavailable noodle varieties are marked as "Out 
 of Stock" and cannot be selected.
 

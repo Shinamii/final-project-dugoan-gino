@@ -18,13 +18,15 @@ const noodleStock = {
     'chapagetti': 10
 };
 
+
 function updateNoodleStock() {
     for (const key in noodleStock) {
         const radio = document.getElementById(key);
         const stockSpan = document.getElementById(key + '-stock');
         const stock = noodleStock[key];
 
-        if (stock === 0) {
+        if (stock <= 0) {
+            radio.checked = false;
             radio.disabled = true;
             stockSpan.textContent = '(Out of Stock)';
         } else {
@@ -57,6 +59,16 @@ placeOrderButton.addEventListener('click', function () {
             addressSummary.textContent = '';
             return;
         }
+        
+            // Noodle required
+    const selectedNoodle = document.querySelector('input[name="noodle"]:checked');
+
+    if (selectedNoodle === null) {
+        message.textContent = 'Please select a noodle';
+        orderSummary.textContent = '';
+        addressSummary.textContent = '';
+        return;
+    }
 
         // Display order summary
         message.textContent = '';
@@ -67,6 +79,9 @@ placeOrderButton.addEventListener('click', function () {
         } else {
             addressSummary.textContent = '';
         }
+            // Reduce stock and refresh the labels
+    noodleStock[selectedNoodle.value] = noodleStock[selectedNoodle.value] - 1;
+    updateNoodleStock();
 
     }
 });
