@@ -38,11 +38,6 @@ html {
     background: #f0f0f0;
 }
 
-#categories button.active {
-    background: #ffd966;
-    font-weight: bold;
-}
-
 section {
     scroll-margin-top: 110px;
 }

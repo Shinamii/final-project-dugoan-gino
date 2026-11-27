@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,139 +9,203 @@
 </head>
 <body>
 
+    <header>
+        <h1>Build Your Own Bite</h1>
+    </header>
+
+    <nav id="categories">
+
+        <button type="button" id="category-noodles" data-target="noodles">
+            <img src="images/noodles.jpeg" alt="Noodles">
+            <span>Noodles</span>
+        </button>
+
+        <button type="button" id="category-drinks" data-target="drinks">
+            <img src="images/drinks.jpeg" alt="Drinks">
+            <span>Drinks</span>
+        </button>
+
+        <button type="button" id="category-desserts" data-target="desserts">
+            <img src="images/dessert.jpeg" alt="Desserts">
+            <span>Desserts</span>
+        </button>
+
+    </nav>
+
     <main>
-        <section id="categories">
-    <button type="button" id="category-noodles">
-        <img src="images/noodles.jpeg" alt="Noodles">
-        <span>Noodles</span>
-    </button>
 
-    <button type="button" id="category-drinks">
-        <img src="images/drinks.jpeg" alt="Drinks">
-        <span>Drinks</span>
-    </button>
+        <section id="noodles">
 
-    <button type="button" id="category-desserts">
-        <img src="images/dessert.jpeg" alt="Desserts">
-        <span>Desserts</span>
-    </button>
-    </section>
+            <h2>Noodles</h2>
+
+            <fieldset>
+                <legend>Choose your order type</legend>
+
+                <div>
+                    <input type="radio" id="dine-in" name="orderType" value="dine-in">
+                    <label for="dine-in">Dine-in</label>
+                </div>
+
+                <div>
+                    <input type="radio" id="take-out" name="orderType" value="take-out">
+                    <label for="take-out">Take-out</label>
+                </div>
+
+                <div>
+                    <input type="radio" id="delivery" name="orderType" value="delivery">
+                    <label for="delivery">Delivery</label>
+                </div>
+            </fieldset>
+
+            <div id="address-section" hidden>
+                <label for="address">Delivery address</label>
+                <input type="text" id="address" name="address">
+            </div>
+
+            <fieldset>
+                <legend>Choose your noodles</legend>
+
+                <div>
+                    <input type="radio" id="buldak-original" name="noodle" value="buldak-original">
+                    <label for="buldak-original">Buldak Original <span id="buldak-original-stock"></span></label>
+                </div>
+
+                <div>
+                    <input type="radio" id="buldak-carbonara" name="noodle" value="buldak-carbonara">
+                    <label for="buldak-carbonara">Buldak Carbonara <span id="buldak-carbonara-stock"></span></label>
+                </div>
+
+                <div>
+                    <input type="radio" id="chapagetti" name="noodle" value="chapagetti">
+                    <label for="chapagetti">Chapagetti <span id="chapagetti-stock"></span></label>
+                </div>
+
+            </fieldset>
+
+            <fieldset>
+                <legend>Choose your spice level</legend>
+
+                <div>
+                    <input type="radio" id="mild" name="spice" value="mild" disabled>
+                    <label for="mild">Mild</label>
+                </div>
+
+                <div>
+                    <input type="radio" id="medium" name="spice" value="medium" disabled>
+                    <label for="medium">Medium</label>
+                </div>
+
+                <div>
+                    <input type="radio" id="hot" name="spice" value="hot" disabled>
+                    <label for="hot">Hot</label>
+                </div>
+
+                <div>
+                    <input type="radio" id="extra-hot" name="spice" value="extra-hot" disabled>
+                    <label for="extra-hot">Extra Hot</label>
+                </div>
+
+                <div>
+                    <input type="radio" id="extreme" name="spice" value="extreme" disabled>
+                    <label for="extreme">Extreme</label>
+                </div>
+
+            </fieldset>
+
+            <fieldset>
+                <legend>Choose your add-ons (optional)</legend>
+
+                <div>
+                    <input type="checkbox" id="egg" name="addon" value="egg">
+                    <label for="egg">Egg <span id="egg-stock"></span></label>
+                </div>
+
+                <div>
+                    <input type="checkbox" id="cheese" name="addon" value="cheese">
+                    <label for="cheese">Cheese <span id="cheese-stock"></span></label>
+                </div>
+
+                <div>
+                    <input type="checkbox" id="ham" name="addon" value="ham">
+                    <label for="ham">Ham <span id="ham-stock"></span></label>
+                </div>
+
+                <div>
+                    <input type="checkbox" id="sausage" name="addon" value="sausage">
+                    <label for="sausage">Sausage <span id="sausage-stock"></span></label>
+                </div>
+
+                <div>
+                    <input type="checkbox" id="corn" name="addon" value="corn">
+                    <label for="corn">Corn <span id="corn-stock"></span></label>
+                </div>
+
+                <div>
+                    <input type="checkbox" id="dumplings" name="addon" value="dumplings">
+                    <label for="dumplings">Dumplings <span id="dumplings-stock"></span></label>
+                </div>
+
+            </fieldset>
+
+        </section>
+
+        <section id="drinks">
+            <h2>Drinks</h2>
     <fieldset>
-        <legend>Choose your order type</legend>
-
-        <div>
-            <input type="radio" id="dine-in" name="orderType" value="dine-in">
-            <label for="dine-in">Dine-in</label>
-        </div>
-
-        <div>
-            <input type="radio" id="take-out" name="orderType" value="take-out">
-            <label for="take-out">Take-out</label>
-        </div>
-
-        <div>
-            <input type="radio" id="delivery" name="orderType" value="delivery">
-            <label for="delivery">Delivery</label>
-        </div>
-    </fieldset>
-
-    <div id="address-section" hidden>
-        <label for="address">Delivery address</label>
-        <input type="text" id="address" name="address">
-    </div>
-
-    <fieldset>
-    <legend>Choose your noodles</legend>
+    <legend>Choose your drinks (optional)</legend>
 
     <div>
-        <input type="radio" id="buldak-original" name="noodle" value="buldak-original">
-        <label for="buldak-original">Buldak Original <span id="buldak-original-stock"></span></label>
-    </div> 
-
-    <div>
-        <input type="radio" id="buldak-carbonara" name="noodle" value="buldak-carbonara">
-        <label for="buldak-carbonara">Buldak Carbonara <span id="buldak-carbonara-stock"></span></label>
+        <input type="checkbox" id="iced-tea" name="drink" value="iced-tea">
+        <label for="iced-tea">Iced Tea <span id="iced-tea-stock"></span></label>
     </div>
 
     <div>
-        <input type="radio" id="chapagetti" name="noodle" value="chapagetti">
-        <label for="chapagetti">Chapagetti <span id="chapagetti-stock"></span></label>
-    </div>
-    </fieldset>
-
-    <fieldset>
-    <legend>Choose your spice level</legend>
-
-    <div>
-        <input type="radio" id="mild" name="spice" value="mild" disabled>
-        <label for="mild">Mild</label>
+        <input type="checkbox" id="cola" name="drink" value="cola">
+        <label for="cola">Cola <span id="cola-stock"></span></label>
     </div>
 
     <div>
-        <input type="radio" id="medium" name="spice" value="medium" disabled>
-        <label for="medium">Medium</label>
-    </div>
-
-    <div>
-        <input type="radio" id="hot" name="spice" value="hot" disabled>
-        <label for="hot">Hot</label>
-    </div>
-
-    <div>
-        <input type="radio" id="extra-hot" name="spice" value="extra-hot" disabled>
-        <label for="extra-hot">Extra Hot</label>
-    </div>
-
-    <div>
-        <input type="radio" id="extreme" name="spice" value="extreme" disabled>
-        <label for="extreme">Extreme</label>
+        <input type="checkbox" id="bottled-water" name="drink" value="bottled-water">
+        <label for="bottled-water">Bottled Water <span id="bottled-water-stock"></span></label>
     </div>
 </fieldset>
+        </section>
 
-    <fieldset>
-    <legend>Choose your add-ons (optional)</legend>
+        <section id="desserts">
+            <h2>Desserts</h2>
+            <fieldset>
+    <legend>Choose your desserts (optional)</legend>
 
     <div>
-        <input type="checkbox" id="egg" name="addon" value="egg">
-        <label for="egg">Egg <span id="egg-stock"></span></label>
+        <input type="checkbox" id="ice-cream" name="dessert" value="ice-cream">
+        <label for="ice-cream">Ice Cream <span id="ice-cream-stock"></span></label>
     </div>
 
     <div>
-        <input type="checkbox" id="cheese" name="addon" value="cheese">
-        <label for="cheese">Cheese <span id="cheese-stock"></span></label>
+        <input type="checkbox" id="leche-flan" name="dessert" value="leche-flan">
+        <label for="leche-flan">Leche Flan <span id="leche-flan-stock"></span></label>
     </div>
 
     <div>
-        <input type="checkbox" id="ham" name="addon" value="ham">
-        <label for="ham">Ham <span id="ham-stock"></span></label>
-    </div>
-
-    <div>
-        <input type="checkbox" id="sausage" name="addon" value="sausage">
-        <label for="sausage">Sausage <span id="sausage-stock"></span></label>
-    </div>
-
-    <div>
-        <input type="checkbox" id="corn" name="addon" value="corn">
-        <label for="corn">Corn <span id="corn-stock"></span></label>
-    </div>
-
-    <div>
-        <input type="checkbox" id="dumplings" name="addon" value="dumplings">
-        <label for="dumplings">Dumplings <span id="dumplings-stock"></span></label>
+        <input type="checkbox" id="brownie" name="dessert" value="brownie">
+        <label for="brownie">Brownie <span id="brownie-stock"></span></label>
     </div>
 </fieldset>
+        </section>
 
-    <button type="button" id="place-order">Place Order</button>
+        <button type="button" id="place-order">Place Order</button>
 
-     <p id="message"></p>
-     <p id="order-summary"></p>
-     <p id="address-summary"></p>
-     <p id="addon-summary"></p>
-     <p id="noodle-summary"></p>
-     <p id="spice-summary"></p>
+        <p id="message"></p>
+        <p id="order-summary"></p>
+        <p id="address-summary"></p>
+        <p id="addon-summary"></p>
+        <p id="noodle-summary"></p>
+        <p id="spice-summary"></p>
+        <p id="drink-summary"></p>
+        <p id="dessert-summary"></p>
     </main>
 
     <script src="script.js"></script>
+
 </body>
 </html>

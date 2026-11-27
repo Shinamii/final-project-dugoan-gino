@@ -1,4 +1,3 @@
-
 const placeOrderButton = document.getElementById('place-order');
 const message = document.getElementById('message');
 const orderSummary = document.getElementById('order-summary');
@@ -9,6 +8,8 @@ const orderTypeRadios = document.querySelectorAll('input[name="orderType"]');
 const addonSummary = document.getElementById('addon-summary');
 const noodleSummary = document.getElementById('noodle-summary');
 const spiceSummary = document.getElementById('spice-summary');
+const dessertSummary = document.getElementById('dessert-summary');
+const drinkSummary = document.getElementById('drink-summary');
 
 const orderTypeNames = {
     'dine-in': 'Dine-in',
@@ -62,8 +63,57 @@ function updateAddonStock() {
     }
 }
 
+const drinkStock = {
+    'iced-tea': 10,
+    'cola': 10,
+    'bottled-water': 1
+};
+
+function updateDrinkStock() {
+    for (const key in drinkStock) {
+        const checkbox = document.getElementById(key);
+        const stockSpan = document.getElementById(key + '-stock');
+        const stock = drinkStock[key];
+
+        if (stock <= 0) {
+            checkbox.checked = false;
+            checkbox.disabled = true;
+            stockSpan.textContent = '(Out of Stock)';
+        } else {
+            checkbox.disabled = false;
+            stockSpan.textContent = '(' + stock + ' left)';
+        }
+    }
+}
+
+const dessertStock = {
+    'ice-cream': 10,
+    'leche-flan': 10,
+    'brownie': 10
+};
+
+function updateDessertStock() {
+    for (const key in dessertStock) {
+        const checkbox = document.getElementById(key);
+        const stockSpan = document.getElementById(key + '-stock');
+        const stock = dessertStock[key];
+
+        if (stock <= 0) {
+            checkbox.checked = false;
+            checkbox.disabled = true;
+            stockSpan.textContent = '(Out of Stock)';
+        } else {
+            checkbox.disabled = false;
+            stockSpan.textContent = '(' + stock + ' left)';
+        }
+    }
+}
+
+
 // Call the function when the page loads
 updateAddonStock();
+updateDrinkStock();
+updateDessertStock();
 
 const spiceNoodles = ['buldak-original', 'buldak-carbonara'];
 
@@ -152,6 +202,8 @@ placeOrderButton.addEventListener('click', function () {
         noodleSummary.textContent = '';
         spiceSummary.textContent = '';
         addonSummary.textContent = '';
+        drinkSummary.textContent = '';
+        dessertSummary.textContent = '';
         return;
     }
 
@@ -188,6 +240,40 @@ placeOrderButton.addEventListener('click', function () {
 
     updateAddonStock();
 
+        // Show selected drinks and reduce their stock
+    const selectedDrinks = document.querySelectorAll('input[name="drink"]:checked');
+    const drinkNames = [];
+
+    selectedDrinks.forEach(function (drink) {
+        drinkNames.push(drink.value);
+        drinkStock[drink.value] = drinkStock[drink.value] - 1;
+    });
+
+    if (drinkNames.length > 0) {
+        drinkSummary.textContent = 'Drinks: ' + drinkNames.join(', ');
+    } else {
+        drinkSummary.textContent = 'Drinks: None';
+    }
+
+    updateDrinkStock();
+
+        // Show selected desserts and reduce their stock
+    const selectedDesserts = document.querySelectorAll('input[name="dessert"]:checked');
+    const dessertNames = [];
+
+    selectedDesserts.forEach(function (dessert) {
+        dessertNames.push(dessert.value);
+        dessertStock[dessert.value] = dessertStock[dessert.value] - 1;
+    });
+
+    if (dessertNames.length > 0) {
+        dessertSummary.textContent = 'Desserts: ' + dessertNames.join(', ');
+    } else {
+        dessertSummary.textContent = 'Desserts: None';
+    }
+
+    updateDessertStock();
+
     // Display order summary
     message.textContent = '';
     orderSummary.textContent = 'Your order type: ' + orderTypeNames[selected.value];
@@ -221,6 +307,8 @@ orderTypeRadios.forEach(function (radio) {
         noodleSummary.textContent = '';
         spiceSummary.textContent = '';
         addonSummary.textContent = '';
+        drinkSummary.textContent = '';
+        dessertSummary.textContent = '';
 
     });
 });
