@@ -193,6 +193,25 @@
 </fieldset>
         </section>
 
+        <fieldset id="payment-section" hidden>
+    <legend>Choose your payment method</legend>
+
+    <div id="cod-option" hidden>
+        <input type="radio" id="cod" name="payment" value="cod">
+        <label for="cod">Cash on Delivery (COD)</label>
+    </div>
+
+    <div id="cash-option" hidden>
+        <input type="radio" id="cash" name="payment" value="cash">
+        <label for="cash">Cash</label>
+    </div>
+
+    <div id="online-option">
+        <input type="radio" id="online" name="payment" value="online">
+        <label for="online">Online Payment</label>
+    </div>
+</fieldset>
+
         <button type="button" id="place-order">Place Order</button>
 
         <p id="message"></p>
@@ -203,6 +222,7 @@
         <p id="spice-summary"></p>
         <p id="drink-summary"></p>
         <p id="dessert-summary"></p>
+        <p id="payment-summary"></p>
     </main>
 
     <script src="script.js"></script>

@@ -1,3 +1,4 @@
+
 const placeOrderButton = document.getElementById('place-order');
 const message = document.getElementById('message');
 const orderSummary = document.getElementById('order-summary');
@@ -10,6 +11,11 @@ const noodleSummary = document.getElementById('noodle-summary');
 const spiceSummary = document.getElementById('spice-summary');
 const dessertSummary = document.getElementById('dessert-summary');
 const drinkSummary = document.getElementById('drink-summary');
+const paymentSection = document.getElementById('payment-section');
+const codOption = document.getElementById('cod-option');
+const cashOption = document.getElementById('cash-option');
+const paymentRadios = document.querySelectorAll('input[name="payment"]');
+const paymentSummary = document.getElementById('payment-summary');
 
 const orderTypeNames = {
     'dine-in': 'Dine-in',
@@ -154,6 +160,7 @@ function updateNoodleStock() {
 updateNoodleStock();
 updateSpiceOptions();
 
+
 // Place Order button
 placeOrderButton.addEventListener('click', function () {
     const selected = document.querySelector('input[name="orderType"]:checked');
@@ -167,6 +174,9 @@ placeOrderButton.addEventListener('click', function () {
         noodleSummary.textContent = '';
         spiceSummary.textContent = '';
         addonSummary.textContent = '';
+        drinkSummary.textContent = '';
+        dessertSummary.textContent = '';
+        paymentSummary.textContent = '';
         return;
     }
 
@@ -178,6 +188,9 @@ placeOrderButton.addEventListener('click', function () {
         noodleSummary.textContent = '';
         spiceSummary.textContent = '';
         addonSummary.textContent = '';
+        drinkSummary.textContent = '';
+        dessertSummary.textContent = '';
+        paymentSummary.textContent = '';
         return;
     }
 
@@ -189,6 +202,9 @@ placeOrderButton.addEventListener('click', function () {
         noodleSummary.textContent = '';
         spiceSummary.textContent = '';
         addonSummary.textContent = '';
+        drinkSummary.textContent = '';
+        dessertSummary.textContent = '';
+        paymentSummary.textContent = '';
         return;
     }
 
@@ -204,6 +220,23 @@ placeOrderButton.addEventListener('click', function () {
         addonSummary.textContent = '';
         drinkSummary.textContent = '';
         dessertSummary.textContent = '';
+        paymentSummary.textContent = '';
+        return;
+    }
+
+    // Payment method required
+    const selectedPayment = document.querySelector('input[name="payment"]:checked');
+
+    if (selectedPayment === null) {
+        message.textContent = 'Please select a payment method';
+        orderSummary.textContent = '';
+        addressSummary.textContent = '';
+        noodleSummary.textContent = '';
+        spiceSummary.textContent = '';
+        addonSummary.textContent = '';
+        drinkSummary.textContent = '';
+        dessertSummary.textContent = '';
+        paymentSummary.textContent = '';
         return;
     }
 
@@ -240,7 +273,7 @@ placeOrderButton.addEventListener('click', function () {
 
     updateAddonStock();
 
-        // Show selected drinks and reduce their stock
+    // Show selected drinks and reduce their stock
     const selectedDrinks = document.querySelectorAll('input[name="drink"]:checked');
     const drinkNames = [];
 
@@ -257,7 +290,7 @@ placeOrderButton.addEventListener('click', function () {
 
     updateDrinkStock();
 
-        // Show selected desserts and reduce their stock
+    // Show selected desserts and reduce their stock
     const selectedDesserts = document.querySelectorAll('input[name="dessert"]:checked');
     const dessertNames = [];
 
@@ -278,6 +311,15 @@ placeOrderButton.addEventListener('click', function () {
     message.textContent = '';
     orderSummary.textContent = 'Your order type: ' + orderTypeNames[selected.value];
 
+    // Show selected payment method
+    const paymentNames = {
+        'cod': 'Cash on Delivery (COD)',
+        'cash': 'Cash',
+        'online': 'Online Payment'
+    };
+
+    paymentSummary.textContent = 'Payment method: ' + paymentNames[selectedPayment.value];
+
     if (selected.value === 'delivery') {
         addressSummary.textContent = 'Delivery address: ' + addressInput.value.trim();
     } else {
@@ -289,6 +331,26 @@ placeOrderButton.addEventListener('click', function () {
     updateNoodleStock();
     updateSpiceOptions();
 });
+
+
+function updatePaymentOptions() {
+    const selected = document.querySelector('input[name="orderType"]:checked');
+
+    // Always clear the old payment choice
+    paymentRadios.forEach(function (radio) {
+        radio.checked = false;
+    });
+
+    if (selected === null) {
+        paymentSection.hidden = true;
+        return;
+    }
+
+    paymentSection.hidden = false;
+    codOption.hidden = selected.value !== 'delivery';
+    cashOption.hidden = selected.value === 'delivery';
+}
+
 
 // Show or hide delivery address
 orderTypeRadios.forEach(function (radio) {
@@ -309,9 +371,12 @@ orderTypeRadios.forEach(function (radio) {
         addonSummary.textContent = '';
         drinkSummary.textContent = '';
         dessertSummary.textContent = '';
+        paymentSummary.textContent = '';
 
+        updatePaymentOptions();
     });
 });
+
 
 // Enable or disable spice options when the noodle changes
 const noodleRadios = document.querySelectorAll('input[name="noodle"]');
@@ -319,6 +384,7 @@ const noodleRadios = document.querySelectorAll('input[name="noodle"]');
 noodleRadios.forEach(function (radio) {
     radio.addEventListener('change', updateSpiceOptions);
 });
+
 
 // Category navigation: scroll to the clicked section
 const categoryButtons = document.querySelectorAll('#categories button');
@@ -329,6 +395,7 @@ categoryButtons.forEach(function (button) {
         target.scrollIntoView({ behavior: 'smooth' });
     });
 });
+
 
 // Highlight the category whose section is currently visible
 const sections = document.querySelectorAll('#noodles, #drinks, #desserts');
