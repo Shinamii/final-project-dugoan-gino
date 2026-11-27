@@ -7,11 +7,12 @@
     <title>Choose Order Type</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="order-page">
 
-    <header>
-        <h1>Build Your Own Bite</h1>
-    </header>
+    <header class="site-header">
+    <img src="images/LOGO.png" alt="Build Your Own Bite logo" class="site-logo">
+    <span class="brand-name">Build Your Own Bite</span>
+</header>
 
     <nav id="categories">
 
@@ -34,54 +35,123 @@
 
     <main>
 
+            <fieldset id="order-type">
+    <legend>Choose your order type</legend>
+
+    <div class="option-row">
+
+        <label class="option-card">
+            <input type="radio" id="dine-in" name="orderType" value="dine-in">
+            <span class="option-icon">🍴</span>
+            <span class="option-label">Dine-in</span>
+        </label>
+
+        <label class="option-card">
+            <input type="radio" id="take-out" name="orderType" value="take-out">
+            <span class="option-icon">🛍️</span>
+            <span class="option-label">Take-out</span>
+        </label>
+
+        <label class="option-card">
+            <input type="radio" id="delivery" name="orderType" value="delivery">
+            <span class="option-icon">🚲</span>
+            <span class="option-label">Delivery</span>
+        </label>
+
+    </div>
+</fieldset>
+
+<div id="address-section" hidden>
+    <label for="address">Delivery address</label>
+    <input type="text" id="address" name="address">
+</div>
+
         <section id="noodles">
 
             <h2>Noodles</h2>
+    <legend>Choose your noodles</legend>
 
-            <fieldset>
-                <legend>Choose your order type</legend>
+    <div class="product-grid">
 
-                <div>
-                    <input type="radio" id="dine-in" name="orderType" value="dine-in">
-                    <label for="dine-in">Dine-in</label>
-                </div>
-
-                <div>
-                    <input type="radio" id="take-out" name="orderType" value="take-out">
-                    <label for="take-out">Take-out</label>
-                </div>
-
-                <div>
-                    <input type="radio" id="delivery" name="orderType" value="delivery">
-                    <label for="delivery">Delivery</label>
-                </div>
-            </fieldset>
-
-            <div id="address-section" hidden>
-                <label for="address">Delivery address</label>
-                <input type="text" id="address" name="address">
+        <!-- PRODUCT 1 -->
+        <label class="product-card">
+            <input type="radio" id="buldak-original" name="noodle" value="buldak-original">
+            <img src="images/Buldak 2.png" alt="Buldak 2X Spicy">
+            <div class="product-info">
+                <h3>Buldak 2X Spicy <span id="buldak-original-stock"></span></h3>
+                <p>Extra spicy chicken noodles for those who love intense heat.</p>
+                <p class="price">₱120</p>
             </div>
+        </label>
 
-            <fieldset>
-                <legend>Choose your noodles</legend>
+        <!-- PRODUCT 2 -->
+        <label class="product-card">
+            <input type="radio" id="buldak-carbonara" name="noodle" value="buldak-carbonara">
+            <img src="images/buldak cheese.png" alt="Buldak Cheese">
+            <div class="product-info">
+                <h3>Buldak Cheese <span id="buldak-carbonara-stock"></span></h3>
+                <p>Spicy chicken noodles with a rich and creamy cheese flavor.</p>
+                <p class="price">₱130</p>
+            </div>
+        </label>
 
-                <div>
-                    <input type="radio" id="buldak-original" name="noodle" value="buldak-original">
-                    <label for="buldak-original">Buldak Original <span id="buldak-original-stock"></span></label>
-                </div>
+        <!-- PRODUCT 3 -->
+        <label class="product-card">
+            <input type="radio" id="chapagetti" name="noodle" value="chapagetti">
+            <img src="images/Buldak Original.png" alt="Buldak Original">
+            <div class="product-info">
+                <h3>Buldak Original <span id="chapagetti-stock"></span></h3>
+                <p>Classic Korean spicy chicken noodles with a bold flavor.</p>
+                <p class="price">₱110</p>
+            </div>
+        </label>
 
-                <div>
-                    <input type="radio" id="buldak-carbonara" name="noodle" value="buldak-carbonara">
-                    <label for="buldak-carbonara">Buldak Carbonara <span id="buldak-carbonara-stock"></span></label>
-                </div>
+        <!-- PRODUCT 4 -->
+        <label class="product-card">
+            <input type="radio" id="buldak-carbonara-original" name="noodle" value="buldak-carbonara-original">
+            <img src="images/Buldak Carbonara.png" alt="Buldak Carbonara">
+            <div class="product-info">
+                <h3>Buldak Carbonara</h3>
+                <p>Creamy carbonara-style noodles with a spicy chicken taste.</p>
+                <p class="price">₱130</p>
+            </div>
+        </label>
 
-                <div>
-                    <input type="radio" id="chapagetti" name="noodle" value="chapagetti">
-                    <label for="chapagetti">Chapagetti <span id="chapagetti-stock"></span></label>
-                </div>
+        <!-- PRODUCT 5 -->
+        <label class="product-card">
+            <input type="radio" id="buldak-jjajang" name="noodle" value="buldak-jjajang">
+            <img src="images/Buldak Jjajang.png" alt="Buldak Jjajang">
+            <div class="product-info">
+                <h3>Buldak Jjajang</h3>
+                <p>Spicy stir-fried noodles with a savory Korean black bean flavor.</p>
+                <p class="price">₱135</p>
+            </div>
+        </label>
 
-            </fieldset>
+        <!-- PRODUCT 6 -->
+        <label class="product-card">
+            <input type="radio" id="buldak-habanero-lime" name="noodle" value="buldak-habanero-lime">
+            <img src="images/Buldak Habanero Lime.png" alt="Buldak Habanero Lime">
+            <div class="product-info">
+                <h3>Buldak Habanero Lime</h3>
+                <p>Fiery chicken noodles with a tangy habanero and lime flavor.</p>
+                <p class="price">₱140</p>
+            </div>
+        </label>
 
+        <!-- PRODUCT 7 -->
+        <label class="product-card">
+            <input type="radio" id="buldak-stew-type" name="noodle" value="buldak-stew-type">
+            <img src="images/Buldak Stew Type.png" alt="Buldak Stew Type">
+            <div class="product-info">
+                <h3>Buldak Stew Type</h3>
+                <p>Spicy chicken noodles served in a rich and flavorful broth.</p>
+                <p class="price">₱140</p>
+            </div>
+        </label>
+
+    </div>
+</fieldset>
             <fieldset>
                 <legend>Choose your spice level</legend>
 

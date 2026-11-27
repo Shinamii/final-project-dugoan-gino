@@ -7,6 +7,7 @@
     <title>Build Your Own Bite</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body class="home">
 
     <!-- Navigation Bar -->
@@ -22,16 +23,17 @@
                 <li><a href="order.html">Order</a></li>
                 <li><a href="cart.html">Cart</a></li>
                 <li><a href="about.html">About</a></li>
-                
-
             </ul>
 
         </nav>
     </header>
 
-    <!-- Main Section -->
+
+    <!-- Main / Welcome Section -->
     <section class="main">
+
         <div class="main-content">
+
             <h1>Welcome to Build Your Own Bite!</h1>
 
             <p>
@@ -40,24 +42,240 @@
                 Start your order now and enjoy a tasty meal!
             </p>
 
-            <a href="order.html" class="order-btn">
+            <a href="#start-order" class="order-btn">
                 Order Now
             </a>
+
         </div>
 
-        <div class="hero-image">
-            <div class="noodle-card">
-                 <img src="images/LOGO.png" alt="Build Your Own Bite Logo" class="hero-logo">
-                <h2>Build your perfect bowl</h2>
-                <p>Choose Customize Enjoy!</p>
-            </div>
-        </div>
     </section>
+
+
+    <!-- Choose Order Type Section -->
+    <section class="start-order" id="start-order">
+
+        <span class="deco deco-1" aria-hidden="true">♥</span>
+        <span class="deco deco-2" aria-hidden="true">✦</span>
+        <span class="deco deco-3" aria-hidden="true">♥</span>
+        <span class="deco deco-4" aria-hidden="true">✦</span>
+
+        <h2>How would you like your order?</h2>
+
+        <p class="start-subtitle">
+            Choose your preferred ordering option to get started.
+        </p>
+
+        <fieldset id="order-type">
+
+            <legend>Choose your order type</legend>
+
+            <div class="option-row">
+
+                <!-- DINE-IN -->
+                <label class="option-card">
+
+                    <input type="radio"
+                           id="dine-in"
+                           name="orderType"
+                           value="dine-in">
+
+                    <span class="option-icon">
+
+                        <svg width="64" height="64" viewBox="0 0 64 64" aria-hidden="true">
+
+                            <path d="M17 8V22M24 8V22M31 8V22M17 22Q17 29 24 29Q31 29 31 22M24 29V54"
+                                  fill="none"
+                                  stroke="#e8738f"
+                                  stroke-width="3.5"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"/>
+
+                            <ellipse cx="46" cy="17" rx="7" ry="10"
+                                     fill="#ffc2d1"
+                                     stroke="#e8738f"
+                                     stroke-width="3"/>
+
+                            <path d="M46 27V54"
+                                  stroke="#e8738f"
+                                  stroke-width="3.5"
+                                  stroke-linecap="round"/>
+
+                        </svg>
+
+                    </span>
+
+                    <span class="option-label">Dine-in</span>
+                    <span class="option-desc">Enjoy your meal here.</span>
+
+                </label>
+
+
+                <!-- TAKE-OUT -->
+                <label class="option-card">
+
+                    <input type="radio"
+                           id="take-out"
+                           name="orderType"
+                           value="take-out">
+
+                    <span class="option-icon">
+
+                        <svg width="64" height="64" viewBox="0 0 64 64" aria-hidden="true">
+
+                            <path d="M23 24V19A9 9 0 0 1 41 19V24"
+                                  fill="none"
+                                  stroke="#a8703a"
+                                  stroke-width="3"
+                                  stroke-linecap="round"/>
+
+                            <rect x="13" y="22" width="38" height="34" rx="4"
+                                  fill="#d9a066"
+                                  stroke="#a8703a"
+                                  stroke-width="3"/>
+
+                            <circle cx="32" cy="40" r="8" fill="#fff"/>
+
+                            <path d="M26.5 38H37.5A5.5 5.5 0 0 1 26.5 38Z"
+                                  fill="#e8738f"/>
+
+                            <path d="M29 35L31 32M33 35L35 32"
+                                  stroke="#a8703a"
+                                  stroke-width="1.5"
+                                  stroke-linecap="round"/>
+
+                        </svg>
+
+                    </span>
+
+                    <span class="option-label">Take-out</span>
+                    <span class="option-desc">Pick up your order.</span>
+
+                </label>
+
+
+                <!-- DELIVERY -->
+                <label class="option-card">
+
+                    <input type="radio"
+                           id="delivery"
+                           name="orderType"
+                           value="delivery">
+
+                    <span class="option-icon">
+
+                        <svg width="64" height="64" viewBox="0 0 64 64" aria-hidden="true">
+
+                            <rect x="5" y="22" width="14" height="12" rx="2"
+                                  fill="#ffd1dc"
+                                  stroke="#e8738f"
+                                  stroke-width="3"/>
+
+                            <rect x="19" y="30" width="15" height="7" rx="3.5"
+                                  fill="#ffc2d1"
+                                  stroke="#e8738f"
+                                  stroke-width="3"/>
+
+                            <path d="M12 46Q12 37 22 37H38L44 24H50M44 24L42 17H48"
+                                  fill="none"
+                                  stroke="#e8738f"
+                                  stroke-width="4"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"/>
+
+                            <circle cx="14" cy="48" r="6"
+                                    fill="#fff"
+                                    stroke="#e8738f"
+                                    stroke-width="3"/>
+
+                            <circle cx="50" cy="48" r="6"
+                                    fill="#fff"
+                                    stroke="#e8738f"
+                                    stroke-width="3"/>
+
+                        </svg>
+
+                    </span>
+
+                    <span class="option-label">Delivery</span>
+                    <span class="option-desc">Get food delivered.</span>
+
+                </label>
+
+            </div>
+
+        </fieldset>
+
+
+        <!-- Delivery Address -->
+        <div id="address-section" hidden>
+
+            <label for="address">Delivery address</label>
+
+            <input type="text"
+                   id="address"
+                   name="address"
+                   placeholder="Enter street, barangay, and city"
+                   autocomplete="street-address">
+
+        </div>
+
+
+        <!-- Continue Button -->
+        <button type="button" id="continue-btn">
+            Continue to Menu →
+        </button>
+
+        <p id="home-message"></p>
+
+    </section>
+
 
     <!-- Footer -->
     <footer>
         <p>&copy; 2026 Build Your Own Bite. All rights reserved.</p>
     </footer>
+
+    <script>
+        const continueButton = document.getElementById('continue-btn');
+        const homeMessage = document.getElementById('home-message');
+        const addressSection = document.getElementById('address-section');
+        const addressInput = document.getElementById('address');
+        const orderTypeOptions = document.querySelectorAll('input[name="orderType"]');
+
+        orderTypeOptions.forEach(function (option) {
+            option.addEventListener('change', function () {
+                const isDelivery = option.value === 'delivery';
+                addressSection.hidden = !isDelivery;
+                addressInput.required = isDelivery;
+                homeMessage.textContent = '';
+            });
+        });
+
+        continueButton.addEventListener('click', function () {
+            const selectedOrderType = document.querySelector('input[name="orderType"]:checked');
+
+            if (selectedOrderType === null) {
+                homeMessage.textContent = 'Please choose your order type first.';
+                homeMessage.style.color = '#d0374a';
+                return;
+            }
+
+            if (selectedOrderType.value === 'delivery' && addressInput.value.trim() === '') {
+                homeMessage.textContent = 'Please enter your delivery address.';
+                homeMessage.style.color = '#d0374a';
+                addressInput.focus();
+                return;
+            }
+
+            localStorage.setItem('orderType', selectedOrderType.value);
+            if (selectedOrderType.value === 'delivery') {
+                sessionStorage.setItem('deliveryAddress', addressInput.value.trim());
+            } else {
+                sessionStorage.removeItem('deliveryAddress');
+            }
+            window.location.href = 'order.html#noodles';
+        });
+    </script>
 
 </body>
 </html>

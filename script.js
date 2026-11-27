@@ -396,6 +396,23 @@ categoryButtons.forEach(function (button) {
     });
 });
 
+// Restore the order type selected on the home page
+const savedOrderType = localStorage.getItem('orderType');
+
+if (savedOrderType !== null) {
+    const savedOrderTypeRadio = document.getElementById(savedOrderType);
+
+    if (savedOrderTypeRadio !== null) {
+        savedOrderTypeRadio.checked = true;
+        updatePaymentOptions();
+
+        if (savedOrderType === 'delivery') {
+            addressSection.hidden = false;
+            addressInput.value = sessionStorage.getItem('deliveryAddress') || '';
+        }
+    }
+}
+
 
 // Highlight the category whose section is currently visible
 const sections = document.querySelectorAll('#noodles, #drinks, #desserts');
